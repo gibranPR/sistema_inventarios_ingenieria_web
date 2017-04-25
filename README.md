@@ -17,7 +17,7 @@ En el caso de Linux será necesario establecer los permisos de la carpeta storag
 chmod -R 777 storage
 ```
 
-##Al clonar
+## Al clonar
 Al clonar el repositorio es necesario hacer unos ajustes. Estos son:
 
  - En el caso de linux, ajustar los permisos antes mencionados.
