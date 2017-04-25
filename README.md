@@ -33,3 +33,23 @@ cp .env.example .env
 php artisan key:generate
 ```
 
+## Bibliotecas
+
+Las bibliotecas se instalarán en
+```sh
+public/bibliotecas/
+```
+
+Se pueden reinstalar todas las bibliotecas con bower desde la raíz
+```sh
+bower install
+```
+
+Este tomará todas las bibliotecas especificadas en el archivo `bower.json` que se encuentra en la raíz del repositorio.
+
+## Plantilla
+
+Todas las opciones que ofrece la plantilla se pueden ver en la página de [Admin LTE].
+
+  [Admin LTE]: <https://almsaeedstudio.com/themes/AdminLTE/index.html>
+

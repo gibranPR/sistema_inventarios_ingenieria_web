@@ -1,0 +1,22 @@
+{
+  "name": "sistema_inventarios_ingenieria_web",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Rosario Iván Román <develdkmd@outlook.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/elshaio/sistema_inventarios_ingenieria_web",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/bibliotecas/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "AdminLTE": "admin-lte#^2.3.11",
+    "font-awesome": "^4.7.0"
+  }
+}
