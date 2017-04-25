@@ -22,7 +22,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         apply the skin class to the body tag so the changes take effect.
   -->
     <link rel="stylesheet" href="{{asset('bibliotecas/AdminLTE/dist/css/skins/skin-red.min.css')}}">
-    
 </head>
 
 <body class="hold-transition skin-red sidebar-mini">
@@ -55,9 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </section>
         </div>
         <footer class="main-footer">
-            <div class="pull-right hidden-xs">
-                Ingeniería Web 2017
-            </div>
+            Ingeniería Web 2017
         </footer>
     </div>
     <!-- jQuery 2.2.3 -->
