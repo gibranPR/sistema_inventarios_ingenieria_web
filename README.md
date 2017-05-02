@@ -24,7 +24,7 @@ Al inicio, se tiene que crear la rama con la que van a trabajar con el siguiente
 ```sh
 git checkout -b <nombre_de_la_rama>
 ```
-Al ejecutar el comando anterior, se cambiará automáticamente de la rama "master" a la rama "<rama>".
+Al ejecutar el comando anterior, se cambiará automáticamente de la rama "master" a la rama "rama".
 
 Una vez se ejecute eso, el flujo de trabajo será el siguiente siempre que quieran trabajar en sus issues.
 
@@ -48,7 +48,7 @@ Para agregar, en el título se puede agregar algo como "#2 Se agregó el login a
 
 Finalmente, se suben los cambios al repositorio en github con:
 ```sh
-git git push orign <nombre_de_la_rama>
+git push orign <nombre_de_la_rama>
 ```
 
 Así los cambios se suben a su rama en el repositorio y no en la rama master para evitar todos los errores.
