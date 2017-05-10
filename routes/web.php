@@ -15,6 +15,12 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/', function () {
     	return view('index');
 	});
+
+	Route::group(['middleware' => ['admin']], function () {
+		Route::get('/usuarios', function () {
+    		return view('index');
+		});
+	});
 });
 
 Auth::routes();

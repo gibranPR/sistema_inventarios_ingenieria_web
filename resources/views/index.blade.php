@@ -27,7 +27,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition skin-red sidebar-mini">
     <div class="wrapper">
         <header class="main-header">
-            <a href="index2.html" class="logo">
+            <a href="{{url('/')}}" class="logo">
                 <span class="logo-mini"><b>S</b>I</span>
                 <span class="logo-lg"><b>Sistema</b> Inventarios</span>
             </a>
@@ -40,13 +40,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="https://robohash.org/{{ Auth::user()->username }}?set=set3" class="user-image" alt="User Image">
-                                <span class="hidden-xs">{{ Auth::user()->username }}</span>
+                                <img src="https://robohash.org/{{ Auth::user()->nombre }}?set=set3" class="user-image" alt="User Image">
+                                <span class="hidden-xs">{{ Auth::user()->nombre }}</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="https://robohash.org/{{ Auth::user()->username }}?set=set3" class="img-circle" alt="User Image">
+                                    <img src="https://robohash.org/{{ Auth::user()->nombre }}?set=set3" class="img-circle" alt="User Image">
                                     <p>
                                         {{ Auth::user()->nombre }} {{ Auth::user()->apellido_paterno }} {{ Auth::user()->apellido_materno }}
                                         <small>{{ Auth::user()->role }}</small>
@@ -72,8 +72,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <aside class="main-sidebar">
             <section class="sidebar">
                 <ul class="sidebar-menu">
+                    @if (Auth::user()->role == 'admin')
+                    <li class="header">ADMIN</li>
+                    <li><a href="{{url('/usuarios')}}"><i class="fa fa-link"></i> <span>Usuarios</span></a></li>
+                    @endif
                     <li class="header">MENÚ</li>
-                    <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link Ejemplo</span></a></li>
+                    <li><a href="{{url('/')}}"><i class="fa fa-link"></i> <span>Link Ejemplo</span></a></li>
                 </ul>
             </section>
         </aside>

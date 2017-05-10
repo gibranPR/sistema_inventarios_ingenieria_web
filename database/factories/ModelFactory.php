@@ -22,6 +22,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'username' => $faker->unique()->userName,
         'password' => $password ?: $password = bcrypt('secret'),
         'estado' => $faker->boolean,
+        'role' => $faker->randomElement(['almacenista', 'admin']),
         'remember_token' => str_random(10),
     ];
 });
