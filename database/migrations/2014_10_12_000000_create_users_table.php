@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('apellido_paterno');
             $table->string('apellido_materno');
             $table->string('username', 60)->unique();
+            $table->string('email', 60)->unique();
             $table->string('password');
             $table->boolean('estado')->default(true);
             $table->enum('role', ['almacenista', 'admin'])->default('almacenista');

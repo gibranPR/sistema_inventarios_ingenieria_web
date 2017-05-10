@@ -20,6 +20,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'apellido_paterno' => $faker->lastName,
         'apellido_materno' => $faker->lastName,
         'username' => $faker->unique()->userName,
+        'email' => $faker->unique()->email,
         'password' => $password ?: $password = bcrypt('secret'),
         'estado' => $faker->boolean,
         'role' => $faker->randomElement(['almacenista', 'admin']),

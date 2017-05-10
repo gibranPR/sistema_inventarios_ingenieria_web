@@ -11,15 +11,17 @@
 |
 */
 
+// Solo para usuarios logueados
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('/', function () {
     	return view('index');
 	});
 
+	// Solo para admins
 	Route::group(['middleware' => ['admin']], function () {
-		Route::get('/usuarios', function () {
-    		return view('index');
-		});
+		Route::get('/usuarios', 'UsuariosController@consultarUsuarios');
+		Route::get('/usuarios/editar/{user_id}', 'UsuariosController@editarUsuario');
+		Route::post('/usuarios/actualizar', 'UsuariosController@actualizarUsuario');
 	});
 });
 

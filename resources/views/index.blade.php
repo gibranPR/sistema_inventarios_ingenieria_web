@@ -41,7 +41,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 <img src="https://robohash.org/{{ Auth::user()->nombre }}?set=set3" class="user-image" alt="User Image">
-                                <span class="hidden-xs">{{ Auth::user()->nombre }}</span>
+                                <span class="hidden-xs">{{ Auth::user()->nombre }} &lt;{{ Auth::user()->username }}&gt;</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -49,7 +49,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <img src="https://robohash.org/{{ Auth::user()->nombre }}?set=set3" class="img-circle" alt="User Image">
                                     <p>
                                         {{ Auth::user()->nombre }} {{ Auth::user()->apellido_paterno }} {{ Auth::user()->apellido_materno }}
-                                        <small>{{ Auth::user()->role }}</small>
+                                        <small>{{ Auth::user()->username }} como {{ Auth::user()->role }}</small>
                                     </p>
                                 </li>
                                 <!-- Menu Footer-->
@@ -99,6 +99,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="{{asset('bibliotecas/AdminLTE/bootstrap/js/bootstrap.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('bibliotecas/AdminLTE/dist/js/app.min.js')}}"></script>
+    @yield('scripts')
 </body>
 
 </html>
