@@ -41,7 +41,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <section class="sidebar">
                 <ul class="sidebar-menu">
                     <li class="header">MENÚ</li>
-                    <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link Ejemplo</span></a></li>
+                    <li class="active"><a href="/registrarClientes"><i class="fa fa-link"></i> <span>Registrar Cliente</span></a></li>
                 </ul>
             </section>
         </aside>
