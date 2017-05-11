@@ -73,8 +73,23 @@ cp .env.example .env
 copy .env.example .env
 php artisan key:generate
 bower install
-
 ```
+
+Una vez hecho lo anterior es necesario actualizar el archivo `.env` con las credenciales correctas de su base de datos, al finalizar esto, se usarán los siguientes comandos para crear las tablas necesarias de login, así como sus usuarios:
+
+```sh
+php artisan migrate:refresh --seed
+```
+Esto creará varios usuarios random, con excepción de 6 los cuales tendrán las siguientes credenciales:
+
+| Usuario      | Rol         | Contraseña   |
+| :----------- | :---------- | :----------- |
+| admin        | admin       | admin        |
+| almacenista  | almacenista | almacenista  |
+| oadmin       | admin       | oadmin       |
+| oalmacenista | almacenista | oalmacenista |
+| gadmin       | admin       | gadmin       |
+| galmacenista | almacenista | galmacenista |
 
 # Bibliotecas
 Las bibliotecas se instalarán en
@@ -102,3 +117,4 @@ La plantilla de la vista se encuentra en `resources/views/plantilla_vista.blade.
 
 ## Admin LTE
 Todas las opciones que ofrece la plantilla se pueden ver en la página de [Admin LTE](https://almsaeedstudio.com/themes/AdminLTE/index.html).
+
