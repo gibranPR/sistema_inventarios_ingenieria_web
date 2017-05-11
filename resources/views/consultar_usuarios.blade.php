@@ -5,9 +5,11 @@
 <div class="col-xs-12">
     <div class="box box-success box-solid">
         <div class="box-header with-border">
-            <h3 class="box-title">Usuarios del Sistema</h3>
+            <h3 class="box-title">Usuarios del Sistema</h3>&nbsp;&nbsp;
+            <a href="{{url('/usuarios/registrar')}}" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Agregar"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span>Agregar Usuario</a>
             <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                    <i class="fa fa-minus"></i>
                 </button>
             </div>
         </div>

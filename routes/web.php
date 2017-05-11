@@ -21,10 +21,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::group(['middleware' => ['admin']], function () {
 		Route::get('/usuarios', 'UsuariosController@consultarUsuarios');
 		Route::get('/usuarios/editar/{user_id}', 'UsuariosController@editarUsuario');
+		Route::get('/usuarios/registrar', 'UsuariosController@vistaRegistrarUsuario');
+		Route::post('/usuarios/registrar', 'UsuariosController@registrarUsuario');
 		Route::post('/usuarios/actualizar', 'UsuariosController@actualizarUsuario');
 	});
 });
 
 Auth::routes();
-
-// Route::get('/home', 'HomeController@index');
