@@ -74,10 +74,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <ul class="sidebar-menu">
                     @if (Auth::user()->role == 'admin')
                     <li class="header">ADMIN</li>
-                    <li><a href="{{url('/usuarios')}}"><i class="fa fa-link"></i> <span>Usuarios</span></a></li>
+                    <li><a href="{{url('/usuarios')}}"><i class="fa fa-users" aria-hidden="true"></i><span>Usuarios</span></a></li>
                     @endif
                     <li class="header">MENÚ</li>
-                    <li><a href="{{url('/')}}"><i class="fa fa-link"></i> <span>Link Ejemplo</span></a></li>
+                    <li><a href="{{url('/consultarClientes')}}"><i class="fa fa-building-o" aria-hidden="true"></i><span>Clientes</span></a></li>
                 </ul>
             </section>
         </aside>

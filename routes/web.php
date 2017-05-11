@@ -17,6 +17,14 @@ Route::group(['middleware' => 'auth'], function () {
     	return view('index');
 	});
 
+	// Hechas por Octavio
+	Route::get('/registrarClientes', 'ClientesController@registrarClientes');
+	Route::get('/consultarClientes', 'ClientesController@consultarClientes');
+	Route::get('/editarCliente/{id}', 'ClientesController@editarCliente');
+	Route::post('actualizarCliente/{id}', 'ClientesController@actualizarCliente');
+	Route::post('/guardarCliente', 'ClientesController@guardarCliente');
+	Route::get('/eliminarCliente/{id}', 'ClientesController@eliminarCliente');
+
 	// Solo para admins
 	Route::group(['middleware' => ['admin']], function () {
 		Route::get('/usuarios', 'UsuariosController@consultarUsuarios');
