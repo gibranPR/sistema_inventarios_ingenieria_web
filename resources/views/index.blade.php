@@ -27,7 +27,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition skin-red sidebar-mini">
     <div class="wrapper">
         <header class="main-header">
-            <a href="index2.html" class="logo">
+            <a href="{{url('/')}}" class="logo">
                 <span class="logo-mini"><b>S</b>I</span>
                 <span class="logo-lg"><b>Sistema</b> Inventarios</span>
             </a>
@@ -35,13 +35,49 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                     <span class="sr-only">Alternar Navegación</span>
                 </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <img src="https://robohash.org/{{ Auth::user()->nombre }}?set=set3" class="user-image" alt="User Image">
+                                <span class="hidden-xs">{{ Auth::user()->nombre }} &lt;{{ Auth::user()->username }}&gt;</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="https://robohash.org/{{ Auth::user()->nombre }}?set=set3" class="img-circle" alt="User Image">
+                                    <p>
+                                        {{ Auth::user()->nombre }} {{ Auth::user()->apellido_paterno }} {{ Auth::user()->apellido_materno }}
+                                        <small>{{ Auth::user()->username }} como {{ Auth::user()->role }}</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            Salir
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </header>
         <aside class="main-sidebar">
             <section class="sidebar">
                 <ul class="sidebar-menu">
+                    @if (Auth::user()->role == 'admin')
+                    <li class="header">ADMIN</li>
+                    <li><a href="{{url('/usuarios')}}"><i class="fa fa-link"></i> <span>Usuarios</span></a></li>
+                    @endif
                     <li class="header">MENÚ</li>
-                    <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link Ejemplo</span></a></li>
+                    <li><a href="{{url('/')}}"><i class="fa fa-link"></i> <span>Link Ejemplo</span></a></li>
                 </ul>
             </section>
         </aside>
@@ -63,6 +99,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="{{asset('bibliotecas/AdminLTE/bootstrap/js/bootstrap.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('bibliotecas/AdminLTE/dist/js/app.min.js')}}"></script>
+    @yield('scripts')
 </body>
 
 </html>
