@@ -17,7 +17,7 @@ Route::group(['middleware' => 'auth'], function () {
     	return view('index');
 	});
 
-	// Hechas por Octavio
+	// Clientes - Octavio
 	Route::get('/registrarClientes', 'ClientesController@registrarClientes');
 	Route::get('/consultarClientes', 'ClientesController@consultarClientes');
 	Route::get('/editarCliente/{id}', 'ClientesController@editarCliente');
@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 	// Solo para admins
 	Route::group(['middleware' => ['admin']], function () {
+	// Usuarios - Iván
 		Route::get('/usuarios', 'UsuariosController@consultarUsuarios');
 		Route::get('/usuarios/editar/{user_id}', 'UsuariosController@editarUsuario');
 		Route::get('/usuarios/registrar', 'UsuariosController@vistaRegistrarUsuario');

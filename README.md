@@ -15,8 +15,8 @@ Sistema de Inventarios (SI)
  	- [Admin LTE](#admin-lte)
 
 # Integrantes
- - Álvarez Hernández Octavio
- - Piedra Rosas Gibrán Alfredo
+ - Álvarez Hernández Octavio (rama octavio)
+ - Piedra Rosas Gibrán Alfredo (rama gibrancito)
  - Román Salazar Rosario Iván (rama shaio)
 
 # Trabajo en GIT
