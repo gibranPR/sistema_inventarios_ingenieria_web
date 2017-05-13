@@ -1,45 +1,57 @@
-@extends('index')
+@extends('index') @section('titulo')
+<h1>
+	Editando al cliente  "{{$cliente->nombre}}"
+</h1> @stop @section('contenido') {{-- Aquí va todo el contenido relacionado con la página actual --}}
+<div class="container">
+    <div class="col-xs-12">
+        <div class="box box-warning">
+            <div class="box-header with-border">
+                <h3 class="box-title">Edición de cliente</h3>
+            </div>
+            <form action="{{url('/actualizarCliente')}}/{{$cliente->id}}" method="POST">
+                {{ csrf_field() }}
 
-@section('titulo')
-	<h2>Editar Cliente</h2>
-	<hr>
-@stop
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input class="form-control" id="nombre" name="nombre" placeholder="Teclea tu Nombre" type="text" value="{{$cliente->nombre}}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edad">Edad</label>
+                        <input class="form-control" id="edad" name="edad" placeholder="Teclea tu edad" type="number" value="{{$cliente->edad}}" required>
+                    </div>
 
-@section('contenido')
-<div class="col-xs-12">
-	<form action="{{url('/actualizarCliente')}}/{{$cliente->id}}" method="POST">
-		<input type="hidden" name="_token" value="{{ csrf_token() }}">
-		<div class="form-group">
-			<label for="nombre">Nombre:</label>
-			<input name="nombre" type="text" placeholder="Teclea el nombre" class="form-control" value="{{$cliente->nombre}}" required>
-		</div>
-		<div class="form-group">
-			<label for="edad">Edad:</label>
-			<input name="edad" type="number" placeholder="Teclea la Edad" class="form-control" value="{{$cliente->edad}}" required>
-		</div>
-		<div class="form-group">
-			<label for="sexo">Sexo:</label>
-			<select name="sexo" class="form-control" required>
-				<option value="">Selecciona el sexo</option>
-				@if($cliente->sexo==0)
-				<option value="0" selected>Femenino</option>
-				<option value="1">Masculino</option>
-				@else
-				<option value="0">Femenino</option>
-				<option value="1" selected>Masculino</option>
-				@endif
-			</select>
-		</div>
-		<div class="form-group">
-			<label for="correo">Empresa:</label>
-			<input name="empresa" type="text" placeholder="Teclea la nueva empresa" class="form-control" value="{{$cliente->empresa}}" required>
-		</div>
-		<div class="form-group">
-			<label for="correo">Correo:</label>
-			<input name="correo" type="email" placeholder="Teclea el e-mail" class="form-control" value="{{$cliente->correo}}" required>
-		</div>
-		<button type="submit" class="btn btn-primary">Actualizar</button>
-		<a href="{{url('/consultarClientes')}}" class="btn btn-danger">Cancelar</a>
-	</form>
+                    <div class="form-group">
+                        <label for="correo">E-mail</label>
+                        <input class="form-control" id="correo" name="correo" placeholder="teclea tu correo" type="email" value="{{$cliente->email}}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Sexo</label>
+                        <select name="sexo" id="sexo" class="form-control" required>
+                            <option value="" disabled>Selecciona tu genero</option>
+                            @if($cliente->sexo==1)
+                            <option value="1" selected>Masculino</option>
+                            <option value="0">femenino</option>
+                            @else
+                            <option value="1">Masculino</option>
+                            <option value="0" selected>Femenino</option>
+                            @endif
+                        </select>
+                    </div>
+                    <div class="form-group">
+											<div class="form-group">
+													<label for="empresa">empresa</label>
+													<input class="form-control" id="empresa" name="empresa" placeholder="empresa" type="text" value="{{$cliente->empresal}}" required>
+											</div>
+                    </div>
+
+                </div>
+                <div class="box-footer">
+                    <a href="{{url('/consultarClientes')}}" class="btn btn-danger">Cancelar</a>
+                    <button type="submit" class="btn btn-success pull-right">Actualizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 @stop
