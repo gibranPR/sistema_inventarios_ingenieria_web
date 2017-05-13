@@ -25,7 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{asset('bibliotecas/AdminLTE/dist/css/skins/skin-red.min.css')}}">
 </head>
 
-<body class="hold-transition skin-red sidebar-mini" ng-app="mainApp" ng-controller="mainController as main">
+<body class="hold-transition skin-red sidebar-mini" ng-app="mainApp" ng-controller="mainController as main" ng-class="{ 'sidebar-collapse': main.sidebarCollapse() }">
     <div class="wrapper">
         <header class="main-header">
             <a href="{{url('/')}}" class="logo">
@@ -33,7 +33,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <span class="logo-lg"><b>Sistema</b> Inventarios</span>
             </a>
             <nav class="navbar navbar-static-top" role="navigation">
-                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <a href="#" class="sidebar-toggle" role="button" ng-click="main.setSidebarCollapse()">
                     <span class="sr-only">Alternar Navegación</span>
                 </a>
                 <div class="navbar-custom-menu">
@@ -102,6 +102,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="{{asset('bibliotecas/angular/angular.min.js')}}"></script>
     {{-- JS de Angular --}}
     <script src="{{asset('js/angular/controllers/mainCtrl.js')}}"></script>    
+    <script src="{{asset('js/angular/services/DataService.js')}}"></script>    
     <script src="{{asset('js/angular/app.js')}}"></script>
     {{-- Evitar conflictos con JQuery --}}
     <script>
