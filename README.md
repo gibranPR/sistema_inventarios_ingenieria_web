@@ -15,8 +15,8 @@ Sistema de Inventarios (SI)
  	- [Admin LTE](#admin-lte)
 
 # Integrantes
- - Álvarez Hernández Octavio
- - Piedra Rosas Gibrán Alfredo
+ - Álvarez Hernández Octavio (rama octavio)
+ - Piedra Rosas Gibrán Alfredo (rama gibrancito)
  - Román Salazar Rosario Iván (rama shaio)
 
 # Trabajo en GIT
@@ -67,13 +67,22 @@ Todas las acciones antes mencionadas se pueden generar con la siguiente secuenci
 #Sólo Linux
 chmod -R 777 storage
 composer install
-#Copiar en Linux
 cp .env.example .env
-#Copiar en Windows
+php artisan key:generate
+bower install
+cp archivos_modificados/AuthenticatesUsers.php vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php
+```
+
+Para windows serían los siguientes comandos:
+```bat
+composer install
 copy .env.example .env
 php artisan key:generate
 bower install
+copy archivos_modificados/AuthenticatesUsers.php vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php
 ```
+
+Los comandos anteriores pueden ejecutarse de manera automática con los scripts que se encuentran en la raíz que son `install_linux.sh` e `install_windows.bat` respectivamente, en windows solo basta con ejecutar el script como `install_windows` desde la consola.
 
 Una vez hecho lo anterior es necesario actualizar el archivo `.env` con las credenciales correctas de su base de datos, al finalizar esto, se usarán los siguientes comandos para crear las tablas necesarias de login, así como sus usuarios:
 

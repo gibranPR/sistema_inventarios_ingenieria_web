@@ -56,7 +56,7 @@
                     </div>
                     <div class="form-group">
                         <label for="password">Nueva Contraseña</label>
-                        <input class="form-control" id="password" name="password" placeholder="Ingrese una nueva contraseña si desea cambiarla" type="text">
+                        <input class="form-control" id="password" name="password" placeholder="Ingrese una nueva contraseña si desea cambiarla" type="password">
                     </div>
                 </div>
                 <div class="box-footer">
