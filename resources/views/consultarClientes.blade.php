@@ -22,7 +22,8 @@
 											<th>Edad</th>
 											<th>Sexo</th>
 											<th>Empresa</th>
-											<th>Correo</th>
+											<th>Estado</th>
+											<th>E-mail</th>
 											<th>
                     </tr>
                 </thead>
@@ -39,15 +40,14 @@
 												Masculino
 												@endif
 											</td>
-
-											<td>{{$a->correo}}</td>
+											<td>{{$a->empresa}}</td>
+											<td>{{$a->estado}}</td>
+											<td>{{$a->email}}</td>
 											<td>
 												<a href="{{url('/editarCliente')}}/{{$a->id}}" class="btn btn-xs btn-warning">
 													<span class="fa fa-pencil-square-o" aria-hidden="true"></span>
 												</a>
-												<button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal{{$a->id}}">
-												  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-												</button>
+												
 											</td>
 										</tr>
 									<!-- Modal -->
@@ -61,10 +61,7 @@
 									      <div class="modal-body">
 									        ¡Una ves eliminado el cliente ya no podras recuperarlo!
 									      </div>
-									      <div class="modal-footer">
-									        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-									        <a href="{{url('/eliminarCliente')}}/{{$a->id}}" class="btn btn-danger">Eliminar</a>
-									      </div>
+
 									    </div>
 									  </div>
 									</div>
