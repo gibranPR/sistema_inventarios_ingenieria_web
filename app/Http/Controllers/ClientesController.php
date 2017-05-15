@@ -9,7 +9,7 @@ use DB;
 class ClientesController extends Controller
 {
   public function registrarClientes(){
-  return view('registrarCliente');
+  return view('registrarcliente');
 }
 
 public function guardarCliente(Request $datos){
@@ -18,11 +18,9 @@ public function guardarCliente(Request $datos){
     $cliente->edad=$datos->input('edad');
     $cliente->sexo=$datos->input('sexo');
     $cliente->empresa=$datos->input('empresa');
-    $cliente->correo=$datos->input('correo');
+    $cliente->estado=$datos->input('estado');
+    $cliente->email=$datos->input('email');
     $cliente->save();
-
-    
-
     return Redirect('/consultarClientes ');
   }
   //*********************************************
@@ -37,10 +35,10 @@ public function guardarCliente(Request $datos){
   }
 
   public function eliminarCliente($id) {
-      $cliente=Cliente::find($id);
+     $cliente=Cliente::find($id);
       $cliente->delete();
 
-      return Redirect('/consultarClientes');
+    return Redirect('/consultarClientes');
   }
 
 
@@ -55,7 +53,8 @@ public function guardarCliente(Request $datos){
       $cliente->edad=$datos->input('edad');
       $cliente->sexo=$datos->input('sexo');
       $cliente->empresa=$datos->input('empresa');
-      $cliente->correo=$datos->input('correo');
+      $cliente->estado=$datos->input('estado');
+      $cliente->email=$datos->input('email');
       $cliente->save();
 
       return Redirect('/consultarClientes');
