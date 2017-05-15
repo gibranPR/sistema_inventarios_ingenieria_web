@@ -7,8 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    {{-- Título de la página --}}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> {{-- Título de la página --}}
     <title>Sistema de Inventarios</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -78,7 +77,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li ng-class="{ active: navbar.isActive('/usuarios')}"><a href="{{url('/usuarios')}}"><i class="fa fa-users" aria-hidden="true"></i><span>Usuarios</span></a></li>
                     @endif
                     <li class="header">MENÚ</li>
-                    <li ng-class="{ active: navbar.isActive('/consultarClientes')}"><a href="{{url('/consultarClientes')}}"><i class="fa fa-building-o" aria-hidden="true"></i><span>Clientes</span></a></li>
+                    <li ng-class="{ active: navbar.isActive('/clientes')}"><a href="{{url('/clientes')}}"><i class="fa fa-building-o" aria-hidden="true"></i><span>Clientes</span></a></li>
                 </ul>
             </section>
         </aside>
@@ -101,13 +100,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
     {{-- Angular --}}
     <script src="{{asset('bibliotecas/angular/angular.min.js')}}"></script>
     {{-- JS de Angular --}}
-    <script src="{{asset('js/angular/controllers/mainCtrl.js')}}"></script>    
-    <script src="{{asset('js/angular/services/DataService.js')}}"></script>    
+    <script src="{{asset('js/angular/controllers/mainCtrl.js')}}"></script>
+    <script src="{{asset('js/angular/services/DataService.js')}}"></script>
     <script src="{{asset('js/angular/app.js')}}"></script>
     {{-- Evitar conflictos con JQuery --}}
     <script>
-        $ = jQuery.noConflict();
-        </script>
+    $ = jQuery.noConflict();
+    </script>
     <!-- AdminLTE App -->
     <script src="{{asset('bibliotecas/AdminLTE/dist/js/app.min.js')}}"></script>
     @yield('scripts')
