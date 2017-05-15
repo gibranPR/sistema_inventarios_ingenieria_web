@@ -19,7 +19,8 @@ class CreateClientesTable extends Migration
             $table->integer('edad');
             $table->boolean('sexo');
             $table->string('empresa', 60);
-            $table->string('correo', 60)->unique();
+            $table->string('email', 60)->unique();
+            $table->boolean('estado');
             $table->timestamps();
         });
     }
