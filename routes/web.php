@@ -39,6 +39,9 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('/consultarProductos', 'ProductosController@consultarProductos');
 		Route::get('/registrarProducto', 'ProductosController@vistaRegistrarProducto');
 		Route::post('/guardaProducto', 'ProductosController@registrarProducto');
+		Route::get('/editarProductos/{id}', 'ProductosController@editarProductos');
+		Route::post('/actualizarProductos/{id}', 'ProductosController@actualizarProductos');
+	
 });
 
 Auth::routes();
