@@ -4,6 +4,12 @@ app.controller('mainController', ['DataFactory', function(DataFactory) {
 
 	var vm = this;
 
+    vm.abrirModal = function(selector, identificador) {
+        vm.identificador_modal = identificador;
+
+        jQuery(selector).modal('show');
+    };
+
 	// Funciones para el botón del sidebar
 
 	vm.sidebarCollapse = function() {
