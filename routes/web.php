@@ -34,6 +34,10 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::post('/usuarios/registrar', 'UsuariosController@registrarUsuario');
 		Route::post('/usuarios/actualizar', 'UsuariosController@actualizarUsuario');
 	});
+
+	//Productos - Gibran
+		Route::get('/consultarProductos', 'ProductosController@consultarProductos');
+
 });
 
 Auth::routes();
