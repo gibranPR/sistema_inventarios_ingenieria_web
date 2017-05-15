@@ -41,7 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::post('/guardaProducto', 'ProductosController@registrarProducto');
 		Route::get('/editarProductos/{id}', 'ProductosController@editarProductos');
 		Route::post('/actualizarProductos/{id}', 'ProductosController@actualizarProductos');
-	
+		Route::get('/disableProductos/{id}', 'ProductosController@disableProducto');
 });
 
 Auth::routes();

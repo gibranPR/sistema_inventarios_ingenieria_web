@@ -36,4 +36,11 @@ class ProductosController extends Controller
     	$productos->save();
 	   	return Redirect('/consultarProductos');
     }
+    public function disableProducto($id) {
+      $productos=Producto::find($id);
+      $productos->activo='0';
+      $productos->save();
+
+      return Redirect('/consultarProductos');
+    }
 }

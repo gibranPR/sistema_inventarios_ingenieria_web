@@ -62,7 +62,7 @@
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-		        <a href="{{url('/eliminarProducto')}}/{{$a->id}}" class="btn btn-danger">Inactivo</a>
+		        <a href="{{url('/disableProductos')}}/{{$a->id}}" class="btn btn-danger">Inactivo</a>
 		      </div>
 		    </div>
 		  </div>
