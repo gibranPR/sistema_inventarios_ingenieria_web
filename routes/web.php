@@ -14,16 +14,15 @@
 // Solo para usuarios logueados
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('/', function () {
-    	return view('index');
+    	return view('home');
 	});
 
 	// Clientes - Octavio
-	Route::get('/registrarClientes', 'ClientesController@registrarClientes');
-	Route::get('/consultarClientes', 'ClientesController@consultarClientes');
-	Route::get('/editarCliente/{id}', 'ClientesController@editarCliente');
-	Route::post('actualizarCliente/{id}', 'ClientesController@actualizarCliente');
-	Route::post('/guardarCliente', 'ClientesController@guardarCliente');
-	Route::get('/eliminarCliente/{id}', 'ClientesController@eliminarCliente');
+	Route::get('/clientes', 'ClientesController@consultarClientes');
+	Route::get('/clientes/editar/{id}', 'ClientesController@editarCliente');
+	Route::get('/clientes/registrar', 'ClientesController@registrarClientes');
+	Route::post('/clientes/registrar', 'ClientesController@guardarCliente');
+	Route::post('/clientes/actualizar', 'ClientesController@actualizarCliente');
 
 	// Solo para admins
 	Route::group(['middleware' => ['admin']], function () {

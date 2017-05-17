@@ -1,8 +1,34 @@
-var app = angular.module('mainCtrl', []);
+var app = angular.module('mainCtrl', ['DataService']);
 
-app.controller('mainController', [function() {
+app.controller('mainController', ['DataFactory', function(DataFactory) {
 
 	var vm = this;
+
+    vm.abrirModal = function(selector, identificador) {
+        vm.identificador_modal = identificador;
+
+        jQuery(selector).modal('show');
+    };
+
+	// Funciones para el botón del sidebar
+
+	vm.sidebarCollapse = function() {
+        if (DataFactory.sidebarCollapse() == 'true') {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    vm.setSidebarCollapse = function() {
+        if (DataFactory.sidebarCollapse() == 'true') {
+            DataFactory.setSidebarCollapse(false);
+        } else {
+            DataFactory.setSidebarCollapse(true);
+        }
+    };
+
+    // ////////////////////////////////////
 
 }]);
 
