@@ -39,3 +39,14 @@ $factory->define(App\Cliente::class, function (Faker\Generator $faker) {
         'estado' => $faker->boolean,
     ];
 });
+
+$factory->define(App\Producto::class, function (Faker\Generator $faker) {
+
+    return [
+        'nombre' => $faker->word,
+        'costo' => $faker->numberBetween(18, 50),
+        'categoria' => $faker->numberBetween(1, 5),
+        'existencia' => $faker->numberBetween(0, 500),
+        'activo' => $faker->boolean,
+    ];
+});

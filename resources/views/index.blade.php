@@ -77,6 +77,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li ng-class="{ active: navbar.isActive('/usuarios')}"><a href="{{url('/usuarios')}}"><i class="fa fa-users" aria-hidden="true"></i><span>Usuarios</span></a></li>
                     @endif
                     <li class="header">MENÚ</li>
+                    <li ng-class="{ active: navbar.isActive('/consultarProductos')}"><a href="{{url('/consultarProductos')}}"><i class="fa fa-building-o" aria-hidden="true"></i><span>Productos</span></a></li>
                     <li ng-class="{ active: navbar.isActive('/clientes')}"><a href="{{url('/clientes')}}"><i class="fa fa-building-o" aria-hidden="true"></i><span>Clientes</span></a></li>
                 </ul>
             </section>

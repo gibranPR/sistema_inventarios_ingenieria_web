@@ -33,6 +33,14 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::post('/usuarios/registrar', 'UsuariosController@registrarUsuario');
 		Route::post('/usuarios/actualizar', 'UsuariosController@actualizarUsuario');
 	});
+
+	//Productos - Gibran
+		Route::get('/consultarProductos', 'ProductosController@consultarProductos');
+		Route::get('/registrarProducto', 'ProductosController@vistaRegistrarProducto');
+		Route::post('/guardaProducto', 'ProductosController@registrarProducto');
+		Route::get('/editarProductos/{id}', 'ProductosController@editarProductos');
+		Route::post('/actualizarProductos/{id}', 'ProductosController@actualizarProductos');
+		Route::get('/disableProductos/{id}', 'ProductosController@disableProducto');
 });
 
 Auth::routes();
