@@ -29,6 +29,18 @@ app.controller('mainController', ['DataFactory', function(DataFactory) {
     };
 
     // ////////////////////////////////////
+    // Situado en nuevo ticket
+
+    vm.ticket_productos = [];
+    vm.agregarProducto = function() {
+        if (typeof vm.ticket_producto == 'string') {
+            var item = JSON.parse(vm.ticket_producto);
+            item.cantidad = 1;
+            vm.ticket_productos.push(item);
+            
+            vm.ticket_producto={};
+        }
+    };
 
 }]);
 
