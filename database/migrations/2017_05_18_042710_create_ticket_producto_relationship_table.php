@@ -15,6 +15,7 @@ class CreateTicketProductoRelationshipTable extends Migration
     {
         Schema::create('ticket_producto', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('cantidad');
             
             $table->integer('ticket_id')->unsigned();
             $table->foreign('ticket_id')->references('id')->on('tickets');

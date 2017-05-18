@@ -17,12 +17,12 @@ class CreateTicketTable extends Migration
             $table->increments('id');
             $table->string('comentario', 500);
             $table->enum('estado_proceso', ['nueva', 'procesando', 'cancelado', 'terminado'])->default('nueva');
+            $table->enum('tipo', ['entrada', 'salida'])->default('salida');
             
-
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('clientes_id')->unsigned();
-            $table->foreign('clientes_id')->references('id')->on('clientes');
+            $table->integer('cliente_id')->unsigned();
+            $table->foreign('cliente_id')->references('id')->on('clientes');
             
             $table->timestamps();
         });
