@@ -17,7 +17,7 @@ class Ticket extends Model
 	}
 
 	public function producto() {
-		return $this->belongsToMany('App\Producto', 'ticket_producto');
+		return $this->belongsToMany('App\Producto', 'ticket_producto', 'ticket_id', 'producto_id')->withPivot('cantidad');
 	}
 
 	public function ticket_producto() {
