@@ -11,6 +11,12 @@ class ClientesTableSeeder extends Seeder
      */
     public function run()
     {
+    	factory(App\Cliente::class)->create([
+			'nombre' => 'Iván Román',
+			'empresa' => 'MZ',
+			'email' => 'correo@mz.com'
+        ]);
+        
         factory(App\Cliente::class, 50)->create(); 
     }
 }

@@ -34,8 +34,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 	// Tickets - Iván
 	Route::get('/tickets', 'TicketsController@consultarTickets');
-	Route::get('/tickets/nuevo', 'TicketsController@nuevoTicket');
-	Route::post('/tickets/nuevo/crear', 'TicketsController@crearTicket');
+	Route::get('/ticket-salida', 'TicketsController@nuevoTicketSalida');
+	Route::get('/ticket-entrada', 'TicketsController@nuevoTicketEntrada');
+	Route::post('/tickets', 'TicketsController@crearTicket');
 
 	// Solo para admins
 	Route::group(['middleware' => ['admin']], function () {

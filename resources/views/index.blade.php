@@ -78,7 +78,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li ng-class="{ active: navbar.isActive('/usuarios')}"><a href="{{url('/usuarios')}}"><i class="fa fa-users" aria-hidden="true"></i><span>Usuarios</span></a></li>
                     @endif
                     <li class="header">MENÚ</li>
-                    <li ng-class="{ active: navbar.isActive('/tickets/nuevo')}"><a href="{{url('/tickets/nuevo')}}"><i class="fa fa-plus-square" aria-hidden="true"></i><span>Nuevo Ticket</span></a></li>
+                    <li ng-class="{ active: navbar.isActive('/ticket-salida')}"><a href="{{url('/ticket-salida')}}"><i class="fa fa-sign-out" aria-hidden="true"></i><span>Nueva Salida</span></a></li>
+                    <li ng-class="{ active: navbar.isActive('/ticket-entrada')}"><a href="{{url('/ticket-entrada')}}"><i class="fa fa-sign-in" aria-hidden="true"></i><span>Nueva Entrada</span></a></li>
                     <li ng-class="{ active: navbar.isActive('/tickets')}"><a href="{{url('/tickets')}}"><i class="fa fa-ticket" aria-hidden="true"></i><span>Tickets</span></a></li>
                     <li ng-class="{ active: navbar.isActive('/consultarProductos')}"><a href="{{url('/consultarProductos')}}"><i class="fa fa-building-o" aria-hidden="true"></i><span>Productos</span></a></li>
                     <li ng-class="{ active: navbar.isActive('/clientes')}"><a href="{{url('/clientes')}}"><i class="fa fa-building-o" aria-hidden="true"></i><span>Clientes</span></a></li>

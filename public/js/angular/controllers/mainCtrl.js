@@ -10,6 +10,10 @@ app.controller('mainController', ['DataFactory', function(DataFactory) {
         jQuery(selector).modal('show');
     };
 
+    vm.eliminarIndiceLista = function(array, indice) {
+        array.splice(indice, 1);
+    };
+
 	// Funciones para el botón del sidebar
 
 	vm.sidebarCollapse = function() {
@@ -37,7 +41,7 @@ app.controller('mainController', ['DataFactory', function(DataFactory) {
             var item = JSON.parse(vm.ticket_producto);
             item.cantidad = 1;
             vm.ticket_productos.push(item);
-            
+
             vm.ticket_producto={};
         }
     };
