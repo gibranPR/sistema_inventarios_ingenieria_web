@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cliente;
-use App\Users;
 use App\Producto;
 use App\Ticket;
 use App\TicketProducto;
@@ -16,6 +15,12 @@ class TicketsController extends Controller
     	$tickets = Ticket::with('user', 'cliente')->orderBy('created_at', 'desc')->paginate(10);
 
     	return view('consultar_tickets', compact('tickets'));
+    }
+
+    public function verTicket($ticket_id) {
+        $ticket = Ticket::with('user', 'cliente', 'producto')->where('id', $ticket_id)->get()[0];
+
+        return view('ver_ticket', compact('ticket'));
     }
 
     public function nuevoTicketEntrada() {

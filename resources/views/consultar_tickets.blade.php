@@ -43,7 +43,7 @@ Visor de Tickets
                         <td>{{$ticket->created_at}}</td>
                         <td>{{$ticket->updated_at}}</td>
                         <td>
-                            <a href="#" class="btn btn-xs btn-warning"><i class="fa fa-eye" aria-hidden="true" data-toggle="tooltip" title="Ver Ticket"></i></a>
+                            <a href="{{url('/tickets/ver')}}/{{$ticket->id}}" class="btn btn-xs btn-warning"><i class="fa fa-eye" aria-hidden="true" data-toggle="tooltip" title="Ver Ticket"></i></a>
                             <a href="#" class="btn btn-xs btn-primary"><i class="fa fa-cogs" aria-hidden="true" data-toggle="tooltip" title="Cambiar Estado"></i></a>
                         </td>
                     </tr>
