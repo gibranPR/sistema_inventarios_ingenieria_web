@@ -14,79 +14,79 @@ class ProductosTableSeeder extends Seeder
         factory(App\Producto::class)->create([
 			'nombre' => 'Aguacate',
 			'costo' => '10.00',
-			'categoria' => '1',
+			'categoria' => 'Frutas y verduras',
 			'existencia' => '10',
-			'activo' => '1'
+			'estado' => '1'
         ]);
         factory(App\Producto::class)->create([
 			'nombre' => 'Tomate',
 			'costo' => '3.00',
-			'categoria' => '1',
+			'categoria' => 'Frutas y verduras',
 			'existencia' => '120',
-			'activo' => '1'
+			'estado' => '1'
         ]);
         factory(App\Producto::class)->create([
 			'nombre' => 'Pepinillos',
 			'costo' => '23.00',
-			'categoria' => '2',
+			'categoria' => 'Frutas y verduras',
 			'existencia' => '100',
-			'activo' => '1'
+			'estado' => '1'
         ]);
         factory(App\Producto::class)->create([
 			'nombre' => 'Pan',
 			'costo' => '23.00',
-			'categoria' => '2',
+			'categoria' => 'Abarrotes',
 			'existencia' => '100',
-			'activo' => '1'
+			'estado' => '1'
         ]);
      	factory(App\Producto::class)->create([
 			'nombre' => 'Jamón',
 			'costo' => '23.00',
-			'categoria' => '2',
+			'categoria' => 'Abarrotes',
 			'existencia' => '100',
-			'activo' => '1'
+			'estado' => '1'
         ]);
         factory(App\Producto::class)->create([
 			'nombre' => 'Cheetos',
 			'costo' => '23.00',
-			'categoria' => '2',
+			'categoria' => 'Abarrotes',
 			'existencia' => '100',
-			'activo' => '1'
+			'estado' => '1'
         ]);
         factory(App\Producto::class)->create([
 			'nombre' => 'Dulces',
 			'costo' => '23.00',
-			'categoria' => '2',
+			'categoria' => 'Abarrotes',
 			'existencia' => '100',
-			'activo' => '1'
+			'estado' => '1'
         ]);
         factory(App\Producto::class)->create([
 			'nombre' => 'Coca-Cola',
 			'costo' => '23.00',
-			'categoria' => '2',
+			'categoria' => 'Abarrotes',
 			'existencia' => '100',
-			'activo' => '1'
+			'estado' => '1'
         ]);
         factory(App\Producto::class)->create([
 			'nombre' => 'Tecate',
 			'costo' => '23.00',
-			'categoria' => '2',
+			'categoria' => 'Abarrotes',
 			'existencia' => '100',
-			'activo' => '1'
+			'estado' => '1'
         ]);
         factory(App\Producto::class)->create([
 			'nombre' => 'Café',
 			'costo' => '23.00',
-			'categoria' => '2',
+			'categoria' => 'Abarrotes',
 			'existencia' => '100',
-			'activo' => '1'
+			'estado' => '1'
         ]);
         factory(App\Producto::class)->create([
 			'nombre' => 'Carne Molida',
 			'costo' => '23.00',
-			'categoria' => '2',
+			'categoria' => 'Abarrotes',
 			'existencia' => '100',
-			'activo' => '1'
+			'estado' => '1'
         ]);
            
     }

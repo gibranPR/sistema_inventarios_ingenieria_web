@@ -34,7 +34,7 @@ class TicketsController extends Controller
     private function nuevoTicket($tipo) {
     	$clientes=Cliente::select('id', 'nombre', 'empresa')->where('estado', '=', '1')->orderBy('nombre')->get();
 
-    	$productos=Producto::select('id', 'nombre', 'existencia')->where([['activo', '=', '1'], ['existencia', '>', '0']])->orderBy('nombre')->get();
+    	$productos=Producto::select('id', 'nombre', 'existencia')->where([['estado', '=', '1'], ['existencia', '>', '0']])->orderBy('nombre')->get();
 
     	return view('crear_ticket', compact('clientes', 'productos', 'tipo'));
     }

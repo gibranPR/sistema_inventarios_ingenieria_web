@@ -17,11 +17,10 @@ class CreateProductosTable extends Migration
             $table->increments('id');
             $table->string('nombre', 100)->index();
             $table->decimal('costo',8,2);
-            $table->integer('categoria');
+            $table->string('categoria',100);
             $table->integer('existencia');
-            $table->boolean('activo')->default(true);
+            $table->boolean('estado')->default(true);
             $table->timestamps();
-            $table->softdeletes();
         });
     }
 
