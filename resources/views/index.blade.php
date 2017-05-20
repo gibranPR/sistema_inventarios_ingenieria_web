@@ -15,16 +15,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{asset('bibliotecas/AdminLTE/bootstrap/css/bootstrap.min.css')}}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('bibliotecas/font-awesome/css/font-awesome.min.css')}}">
+    @yield('css')
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('bibliotecas/AdminLTE/dist/css/AdminLTE.min.css')}}">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect.
   -->
-    <link rel="stylesheet" href="{{asset('bibliotecas/AdminLTE/dist/css/skins/skin-red.min.css')}}">
+    <link rel="stylesheet" href="{{asset('bibliotecas/AdminLTE/dist/css/skins/skin-green.min.css')}}">
 </head>
 
-<body class="hold-transition skin-red sidebar-mini" ng-app="mainApp" ng-controller="mainController as main" ng-class="{ 'sidebar-collapse': main.sidebarCollapse() }">
+<body class="hold-transition skin-green sidebar-mini" ng-app="mainApp" ng-controller="mainController as main" ng-class="{ 'sidebar-collapse': main.sidebarCollapse() }">
     <div class="wrapper">
         <header class="main-header">
             <a href="{{url('/')}}" class="logo">
@@ -77,6 +78,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li ng-class="{ active: navbar.isActive('/usuarios')}"><a href="{{url('/usuarios')}}"><i class="fa fa-users" aria-hidden="true"></i><span>Usuarios</span></a></li>
                     @endif
                     <li class="header">MENÚ</li>
+                    <li ng-class="{ active: navbar.isActive('/ticket-salida')}"><a href="{{url('/ticket-salida')}}"><i class="fa fa-sign-out" aria-hidden="true"></i><span>Nueva Salida</span></a></li>
+                    <li ng-class="{ active: navbar.isActive('/ticket-entrada')}"><a href="{{url('/ticket-entrada')}}"><i class="fa fa-sign-in" aria-hidden="true"></i><span>Nueva Entrada</span></a></li>
+                    <li ng-class="{ active: navbar.isActive('/tickets')}"><a href="{{url('/tickets')}}"><i class="fa fa-ticket" aria-hidden="true"></i><span>Tickets</span></a></li>
                     <li ng-class="{ active: navbar.isActive('/consultarProductos')}"><a href="{{url('/consultarProductos')}}"><i class="fa fa-building-o" aria-hidden="true"></i><span>Productos</span></a></li>
                     <li ng-class="{ active: navbar.isActive('/clientes')}"><a href="{{url('/clientes')}}"><i class="fa fa-building-o" aria-hidden="true"></i><span>Clientes</span></a></li>
                 </ul>

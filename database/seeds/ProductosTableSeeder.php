@@ -29,9 +29,65 @@ class ProductosTableSeeder extends Seeder
 			'nombre' => 'Pepinillos',
 			'costo' => '23.00',
 			'categoria' => '2',
-			'existencia' => '0',
-			'activo' => '0'
+			'existencia' => '100',
+			'activo' => '1'
         ]);
-		factory(App\Producto::class, 27)->create(); 
+        factory(App\Producto::class)->create([
+			'nombre' => 'Pan',
+			'costo' => '23.00',
+			'categoria' => '2',
+			'existencia' => '100',
+			'activo' => '1'
+        ]);
+     	factory(App\Producto::class)->create([
+			'nombre' => 'Jamón',
+			'costo' => '23.00',
+			'categoria' => '2',
+			'existencia' => '100',
+			'activo' => '1'
+        ]);
+        factory(App\Producto::class)->create([
+			'nombre' => 'Cheetos',
+			'costo' => '23.00',
+			'categoria' => '2',
+			'existencia' => '100',
+			'activo' => '1'
+        ]);
+        factory(App\Producto::class)->create([
+			'nombre' => 'Dulces',
+			'costo' => '23.00',
+			'categoria' => '2',
+			'existencia' => '100',
+			'activo' => '1'
+        ]);
+        factory(App\Producto::class)->create([
+			'nombre' => 'Coca-Cola',
+			'costo' => '23.00',
+			'categoria' => '2',
+			'existencia' => '100',
+			'activo' => '1'
+        ]);
+        factory(App\Producto::class)->create([
+			'nombre' => 'Tecate',
+			'costo' => '23.00',
+			'categoria' => '2',
+			'existencia' => '100',
+			'activo' => '1'
+        ]);
+        factory(App\Producto::class)->create([
+			'nombre' => 'Café',
+			'costo' => '23.00',
+			'categoria' => '2',
+			'existencia' => '100',
+			'activo' => '1'
+        ]);
+        factory(App\Producto::class)->create([
+			'nombre' => 'Carne Molida',
+			'costo' => '23.00',
+			'categoria' => '2',
+			'existencia' => '100',
+			'activo' => '1'
+        ]);
+           
     }
 }

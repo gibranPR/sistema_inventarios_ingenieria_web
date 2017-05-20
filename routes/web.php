@@ -24,6 +24,21 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/clientes/registrar', 'ClientesController@guardarCliente');
 	Route::post('/clientes/actualizar', 'ClientesController@actualizarCliente');
 
+	//Productos - Gibran
+	Route::get('/consultarProductos', 'ProductosController@consultarProductos');
+	Route::get('/registrarProducto', 'ProductosController@vistaRegistrarProducto');
+	Route::post('/guardaProducto', 'ProductosController@registrarProducto');
+	Route::get('/editarProductos/{id}', 'ProductosController@editarProductos');
+	Route::post('/actualizarProductos/{id}', 'ProductosController@actualizarProductos');
+	Route::get('/disableProductos/{id}', 'ProductosController@disableProducto');
+
+	// Tickets - Iván
+	Route::get('/tickets', 'TicketsController@consultarTickets');
+	Route::get('/tickets/ver/{ticket_id}', 'TicketsController@verTicket');
+	Route::get('/ticket-salida', 'TicketsController@nuevoTicketSalida');
+	Route::get('/ticket-entrada', 'TicketsController@nuevoTicketEntrada');
+	Route::post('/tickets', 'TicketsController@crearTicket');
+
 	// Solo para admins
 	Route::group(['middleware' => ['admin']], function () {
 	// Usuarios - Iván
@@ -34,13 +49,6 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::post('/usuarios/actualizar', 'UsuariosController@actualizarUsuario');
 	});
 
-	//Productos - Gibran
-		Route::get('/consultarProductos', 'ProductosController@consultarProductos');
-		Route::get('/registrarProducto', 'ProductosController@vistaRegistrarProducto');
-		Route::post('/guardaProducto', 'ProductosController@registrarProducto');
-		Route::get('/editarProductos/{id}', 'ProductosController@editarProductos');
-		Route::post('/actualizarProductos/{id}', 'ProductosController@actualizarProductos');
-		Route::get('/disableProductos/{id}', 'ProductosController@disableProducto');
 });
 
 Auth::routes();
