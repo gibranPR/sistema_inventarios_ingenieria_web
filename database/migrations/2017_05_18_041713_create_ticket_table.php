@@ -16,7 +16,7 @@ class CreateTicketTable extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->increments('id');
             $table->string('comentario', 500);
-            $table->enum('estado_proceso', ['nuevo', 'procesando', 'cancelado', 'terminado'])->default('nuevo');
+            $table->enum('estado_proceso', ['nuevo', 'procesando', 'pausado', 'cancelado', 'terminado'])->default('nuevo');
             $table->enum('tipo', ['entrada', 'salida'])->default('salida');
             
             $table->integer('user_id')->unsigned();

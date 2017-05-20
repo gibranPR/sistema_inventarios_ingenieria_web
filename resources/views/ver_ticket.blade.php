@@ -64,6 +64,7 @@
                     <dd ng-switch="'{{$ticket->estado_proceso}}'">
                         <span ng-switch-when="nuevo"><i class="fa fa-lightbulb-o text-orange" aria-hidden="true"></i> Nuevo</span>
                         <span ng-switch-when="procesando"><i class="fa fa-forward text-blue" aria-hidden="true"></i> Procesando</span>
+                        <span ng-switch-when="pausado"><i class="fa fa-pause-circle text-teal" aria-hidden="true"></i> En Pausa</span>
                         <span ng-switch-when="cancelado"><i class="fa fa-ban text-red" aria-hidden="true"></i> Cancelado</span>
                         <span ng-switch-when="terminado"><i class="fa fa-check-circle text-green" aria-hidden="true"></i> Terminado</span>
                     </dd>
