@@ -13,7 +13,7 @@ use DB;
 class TicketsController extends Controller
 {
     public function consultarTickets() {
-    	$tickets = Ticket::with('user', 'cliente')->orderBy('created_at', 'desc')->get();
+    	$tickets = Ticket::with('user', 'cliente')->orderBy('created_at', 'desc')->paginate(10);
 
     	return view('consultar_tickets', compact('tickets'));
     }

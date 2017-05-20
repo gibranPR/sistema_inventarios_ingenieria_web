@@ -14,7 +14,8 @@ class ClientesTableSeeder extends Seeder
     	factory(App\Cliente::class)->create([
 			'nombre' => 'Iván Román',
 			'empresa' => 'MZ',
-			'email' => 'correo@mz.com'
+			'email' => 'correo@mz.com',
+            'estado' => true
         ]);
         
         factory(App\Cliente::class, 50)->create(); 

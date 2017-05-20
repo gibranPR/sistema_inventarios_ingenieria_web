@@ -77,7 +77,7 @@
                 </div>
                 <div class="box-footer">
                     <a href="{{url('/usuarios')}}" class="btn btn-danger">Cancelar</a>
-                    <button type="submit" class="btn btn-success pull-right">Actualizar</button>
+                    <button type="submit" class="btn btn-success pull-right">Crear</button>
                 </div>
             </form>
         </div>

@@ -22,10 +22,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect.
   -->
-    <link rel="stylesheet" href="{{asset('bibliotecas/AdminLTE/dist/css/skins/skin-red.min.css')}}">
+    <link rel="stylesheet" href="{{asset('bibliotecas/AdminLTE/dist/css/skins/skin-green.min.css')}}">
 </head>
 
-<body class="hold-transition skin-red sidebar-mini" ng-app="mainApp" ng-controller="mainController as main" ng-class="{ 'sidebar-collapse': main.sidebarCollapse() }">
+<body class="hold-transition skin-green sidebar-mini" ng-app="mainApp" ng-controller="mainController as main" ng-class="{ 'sidebar-collapse': main.sidebarCollapse() }">
     <div class="wrapper">
         <header class="main-header">
             <a href="{{url('/')}}" class="logo">
