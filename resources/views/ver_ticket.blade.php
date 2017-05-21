@@ -130,8 +130,13 @@
                         @{{main.fechaTimestamp(historia.created_at) | date}}
                     </span>
             </li>
-            <li ng-repeat-end>
-                <i class="fa fa-refresh bg-green"></i>
+            <li ng-repeat-end ng-switch="historia.estado_actual">
+                <i ng-switch-when="nuevo" class="fa fa-lightbulb-o bg-orange"></i>
+                <i ng-switch-when="procesando" class="fa fa-forward bg-blue"></i>
+                <i ng-switch-when="pausado" class="fa fa-pause-circle bg-teal"></i>
+                <i ng-switch-when="cancelado" class="fa fa-ban bg-red"></i>
+                <i ng-switch-when="terminado" class="fa fa-check-circle bg-green"></i>
+                <i ng-switch-default class="fa fa-refresh bg-green"></i>
                 <div class="timeline-item">
                     <span class="time"><i class="fa fa-clock-o"></i> @{{main.fechaTimestamp(historia.created_at) | date: 'HH:mm:ss'}}</span>
                     <h3 class="timeline-header"><a href="#">@{{historia.usuario}}</a> cambió ticket de "@{{historia.estado_anterior}}" a "@{{historia.estado_actual}}"</h3>
