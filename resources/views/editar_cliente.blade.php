@@ -17,9 +17,14 @@
                         <input class="form-control" id="nombre" name="nombre" placeholder="Nombre" type="text" value="{{$cliente->nombre}}" required>
                     </div>
                     <div class="form-group">
-                        <label for="edad">Edad</label>
-                        <input class="form-control" id="edad" name="edad" placeholder="Edad" type="number" value="{{$cliente->edad}}" required>
+                        <label for="ApellidoP">Apellido Paterno</label>
+                        <input class="form-control" id="ApellidoP" name="ApellidoP" placeholder="Apellido Paterno" type="text" value="{{$cliente->ApellidoP}}" required>
                     </div>
+                    <div class="form-group">
+                        <label for="ApellidoM">Apellido Materno</label>
+                        <input class="form-control" id="ApellidoM" name="ApellidoM" placeholder="Apellido Materno" type="text" value="{{$cliente->ApellidoM}}" required>
+                    </div>
+
                     <div class="form-group">
                         <label>Sexo</label>
                         <select name="sexo" id="sexo" class="form-control" required>
@@ -35,7 +40,7 @@
                     </div>
                     <div class="form-group">
                         <label for="nombre">Empresa</label>
-                        <input class="form-control" id="empresa" name="empresa" placeholder="Empresa" type="text" value="{{$cliente->empresal}}" required>
+                        <input class="form-control" id="empresa" name="empresa" placeholder="Empresa" type="text" value="{{$cliente->empresa}}" required>
                     </div>
                     <div class="form-group">
                         <label>Estado</label>

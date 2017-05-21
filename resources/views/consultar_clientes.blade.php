@@ -19,7 +19,8 @@
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Edad</th>
+												<th>Apellido Paterno</th>
+												<th>Apellido Materno</th>
                         <th>Sexo</th>
                         <th>Empresa</th>
                         <th>Estado</th>
@@ -32,7 +33,8 @@
                     <tr>
                         <td>{{$a->id}}</td>
                         <td>{{$a->nombre}}</td>
-                        <td>{{$a->edad}}</td>
+                        <td>{{$a->ApellidoP}}</td>
+												<td>{{$a->ApellidoM}}</td>
                         <td>
                             @if($a->sexo==0) Femenino @else Masculino @endif
                         </td>

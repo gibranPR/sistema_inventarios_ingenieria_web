@@ -15,16 +15,24 @@
                         <label for="nombre">Nombre</label>
                         <input class="form-control" id="nombre" name="nombre" placeholder="Teclea el Nombre" type="text" required autofocus>
                     </div>
-                    <div class="form-group">
-                        <label for="edad">Edad</label>
-                        <input class="form-control" id="edad" name="edad" placeholder="Ingresa tu edad" type="number" required>
-                    </div>
+
+                        <div class="form-group">
+                            <label for="ApellidoP">Apellido Paterno</label>
+                            <input class="form-control" id="ApellidoP" name="ApellidoP" placeholder="Ingresa tu apellido paterno" type="text" required autofocus>
+                        </div>
+
+                            <div class="form-group">
+                                <label for="ApellidoM">Apellido Materno</label>
+                                <input class="form-control" id="ApellidoM" name="ApellidoM" placeholder="Ingresa tu apellido materno" type="text" required autofocus>
+                            </div>
+
+
                     <div class="form-group">
                         <label>Sexo</label>
                         <select name="sexo" id="sexo" class="form-control" required>
-                            <option value="" disabled>Selecciona tu genero</option>
+                            <option value="" selected>Selecciona tu genero</option>
                             <option value="1">Masculino</option>
-                            <option value="0" selected>Femenino</option>
+                            <option value="0" >Femenino</option>
                         </select>
                     </div>
                     <div class="form-group">
