@@ -14,6 +14,10 @@ app.controller('mainController', ['DataFactory', function(DataFactory) {
         array.splice(indice, 1);
     };
 
+    vm.fechaTimestamp = function(fechaTimestamp) {
+        return moment(fechaTimestamp, 'YYYY-MM-DD HH:mm:ss').toDate();
+    };
+
 	// Funciones para el botón del sidebar
 
 	vm.sidebarCollapse = function() {

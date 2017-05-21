@@ -22,7 +22,9 @@ class TicketsController extends Controller
     public function verTicket($ticket_id) {
         $ticket = Ticket::with('user', 'cliente', 'producto')->where('id', $ticket_id)->get()[0];
 
-        return view('ver_ticket', compact('ticket'));
+        $historial_ticket = HistorialTicket::where('ticket_id', '=', $ticket_id)->orderBy('created_at', 'desc')->get();
+
+        return view('ver_ticket', compact('ticket', 'historial_ticket'));
     }
 
     public function nuevoTicketEntrada() {

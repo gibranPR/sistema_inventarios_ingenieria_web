@@ -98,10 +98,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             Ingeniería Web 2017
         </footer>
     </div>
-    <!-- jQuery 2.2.3 -->
+    {{-- jQuery 2.2.3 --}}
     <script src="{{asset('bibliotecas/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
-    <!-- Bootstrap 3.3.6 -->
+    {{-- Bootstrap 3.3.6 --}}
     <script src="{{asset('bibliotecas/AdminLTE/bootstrap/js/bootstrap.min.js')}}"></script>
+    {{-- Moment.js --}}
+    <script src="{{asset('bibliotecas/moment/min/moment.min.js')}}"></script>
     {{-- Angular --}}
     <script src="{{asset('bibliotecas/angular/angular.min.js')}}"></script>
     {{-- JS de Angular --}}

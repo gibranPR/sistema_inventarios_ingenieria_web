@@ -84,7 +84,8 @@
                 </dl>
             </div>
         </div>
-        {{-- <div class="box-footer">
+        {{--
+        <div class="box-footer">
         </div> --}}
     </div>
 </div>
@@ -99,24 +100,48 @@
         </div>
         <div class="box-body table-responsive no-padding">
             <table class="table table-striped">
-            	<thead>
-            		<tr>
-            			<th>ID</th>
-            			<th>Nombre</th>
-            			<th>Cantidad</th>
-            		</tr>
-            	</thead>
-            	<tbody>
-            		@foreach($ticket->producto as $producto)
-            		<tr>
-            			<td>{{$producto->id}}</td>
-            			<td>{{$producto->nombre}}</td>
-            			<td>{{$producto->pivot->cantidad}}</td>
-            		</tr>
-            		@endforeach
-            	</tbody>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($ticket->producto as $producto)
+                    <tr>
+                        <td>{{$producto->id}}</td>
+                        <td>{{$producto->nombre}}</td>
+                        <td>{{$producto->pivot->cantidad}}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <ul class="timeline" ng-init="main.historial_ticket={{$historial_ticket}}">
+            <li class="time-label" ng-repeat-start="historia in main.historial_ticket">
+                <span class="bg-red">
+                        @{{main.fechaTimestamp(historia.created_at) | date}}
+                    </span>
+            </li>
+            <li ng-repeat-end>
+                <i class="fa fa-refresh bg-green"></i>
+                <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> @{{main.fechaTimestamp(historia.created_at) | date: 'HH:mm:ss'}}</span>
+                    <h3 class="timeline-header"><a href="#">@{{historia.usuario}}</a> cambió ticket de "@{{historia.estado_anterior}}" a "@{{historia.estado_actual}}"</h3>
+                    <div class="timeline-body">
+                        @{{historia.comentario}}
+                    </div>
+                </div>
+            </li>
+            <li>
+                <i class="fa fa-clock-o bg-gray"></i>
+            </li>
+        </ul>
     </div>
 </div>
 @stop
