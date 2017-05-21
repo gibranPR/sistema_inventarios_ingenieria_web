@@ -5,7 +5,7 @@ use App\Producto;
 class ProductosController extends Controller
 {
 	  public function consultarProductos() {
-	   	$productos = Producto::select('id','nombre','costo','categoria','existencia','activo')->paginate(10);
+	   	$productos = Producto::select('id','nombre','costo','categoria','existencia','estado')->paginate(10);
 	   	return view('consultarProductos', compact('productos'));
 	  }
 	  public function registrarProducto(Request $datos){
@@ -14,7 +14,7 @@ class ProductosController extends Controller
 	    $productos->costo=$datos->input('costo');
 	    $productos->categoria=$datos->input('categoria');
 	    $productos->existencia=$datos->input('existencia');
-	    $productos->activo=$datos->input('activo');
+	    $productos->estado=$datos->input('estado');
 	    $productos->save();
 	    return Redirect('/consultarProductos');
   	}
@@ -32,13 +32,13 @@ class ProductosController extends Controller
     	$productos->costo=$input['costo'];
     	$productos->categoria=$input['categoria'];
     	$productos->existencia=$input['existencia'];
-    	$productos->activo=$input['activo'];
+    	$productos->estado=$input['estado'];
     	$productos->save();
 	   	return Redirect('/consultarProductos');
     }
     public function disableProducto($id) {
       $productos=Producto::find($id);
-      $productos->activo='0';
+      $productos->estado='0';
       $productos->save();
 
       return Redirect('/consultarProductos');

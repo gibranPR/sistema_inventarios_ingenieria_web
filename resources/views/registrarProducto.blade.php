@@ -22,21 +22,21 @@
 		</div>
 		<div class="form-group">
 			<label for="categoria">Categoría:</label>
-			<input name="categoria" type="number" placeholder="Teclea Categoría" class="form-control" required>
+			<input name="categoria" type="text" placeholder="Teclea Categoría" class="form-control" required>
 		</div>
 		<div class="form-group">
 			<label for="existencia">Existencia:</label>
 			<input name="existencia" type="number" placeholder="Teclea la existencia" class="form-control" required>
 		</div>
 		<div class="form-group">
-			<label for="activo">Estatus del producto:</label>
-			<select name="activo" class="form-control" required>
+			<label for="estado">Estado del producto:</label>
+			<select name="estado" class="form-control" required>
                     <option value="1">Activo</option>
                     <option value="0">Inactivo</option>
             </select>
 		</div>
-		<button type="submit" class="btn btn-primary">Guardar</button>
 		<a href="{{url('/consultarProductos')}}" class="btn btn-danger">Cancelar</a>
+		<button type="submit" class="btn btn-primary">Guardar</button>
 	</form>
 </div>
 @stop
