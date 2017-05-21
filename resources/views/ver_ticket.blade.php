@@ -84,9 +84,11 @@
                 </dl>
             </div>
         </div>
-        {{--
+        @if($ticket->estado_proceso != 'cancelado' && $ticket->estado_proceso != 'terminado')
         <div class="box-footer">
-        </div> --}}
+            <a href="#" class="btn btn-danger" ng-click="main.abrirModal('#modal-cambiar-estado', {'ticket_id': '{{$ticket->id}}', 'estado_proceso': '{{$ticket->estado_proceso}}'})"><i class="fa fa-cogs" aria-hidden="true"></i> Cambiar Estado del Ticket</a>
+        </div>
+        @endif
     </div>
 </div>
 <div class="col-md-12 col-xs-12">
@@ -142,6 +144,41 @@
                 <i class="fa fa-clock-o bg-gray"></i>
             </li>
         </ul>
+    </div>
+</div>
+<div class="modal modal-danger" id="modal-cambiar-estado" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="{{url('/tickets/estado')}}" method="POST">
+                {{ csrf_field() }}
+                <div class="modal-header">
+                    <h4 class="modal-title">Cambiar estado de ticket</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Estado actual del ticket #@{{main.identificador_modal.ticket_id}}: "@{{main.identificador_modal.estado_proceso}}"</p>
+                    <input type="hidden" name="ticket_id" value="@{{main.identificador_modal.ticket_id}}">
+                    <div class="form-group">
+                        <label for="nuevo_estado">Nuevo Estado</label ng-init="main.nuevo_estado=undefined">
+                        <select name="nuevo_estado" id="nuevo_estado" required class="form-control" ng-model="main.nuevo_estado">
+                            <option value="" selected disabled>Nuevo estado</option>
+                            <option ng-if="main.identificador_modal.estado_proceso == 'nuevo' || main.identificador_modal.estado_proceso == 'pausado'" value="procesando">Procesando</option>
+                            <option ng-if="main.identificador_modal.estado_proceso == 'nuevo' || main.identificador_modal.estado_proceso == 'procesando'" value="pausado">Pausado</option>
+                            <option value="cancelado">Cancelado</option>
+                            <option ng-if="main.identificador_modal.estado_proceso == 'procesando'" value="terminado">Terminado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="comentario">Comentario del cambio de estado</label>
+                        <textarea name="comentario" id="comentario" class="form-control" rows="4" placeholder="Comentario" maxlength="500" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline pull-left" data-dismiss="modal" ng-click="main.confirmar=false">Cerrar</button>
+                    <button ng-if="main.confirmar===true" type="submit" class="btn btn-primary">Aceptar</button>
+                    <a href="#" class="btn btn-outline" ng-click="main.confirmar=true">Confirmar</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 @stop

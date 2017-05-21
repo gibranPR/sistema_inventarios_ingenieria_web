@@ -43,7 +43,8 @@ class TicketsController extends Controller
         $ticket->estado_proceso = $datos->input('nuevo_estado');
         $ticket->save();
 
-        return Redirect('/tickets');
+        // return Redirect('/tickets');
+        return redirect()->back();
     }
 
     private function nuevoTicket($tipo) {

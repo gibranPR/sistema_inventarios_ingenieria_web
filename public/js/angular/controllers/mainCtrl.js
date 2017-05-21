@@ -5,6 +5,7 @@ app.controller('mainController', ['DataFactory', function(DataFactory) {
 	var vm = this;
 
     vm.abrirModal = function(selector, identificador) {
+        console.log("selector", selector);
         vm.identificador_modal = identificador;
 
         jQuery(selector).modal('show');
