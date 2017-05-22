@@ -36,12 +36,40 @@ class TicketsController extends Controller
     }
 
     public function cambiarEstado(Request $datos) {
-        $ticket = Ticket::find($datos->input('ticket_id'));
+        DB::beginTransaction();
 
-        $this->nuevoHistorialTicket($ticket->estado_proceso, $datos->input('nuevo_estado'), $datos->input('comentario'), $datos->input('ticket_id'));
 
-        $ticket->estado_proceso = $datos->input('nuevo_estado');
-        $ticket->save();
+        try {
+
+            $ticket = Ticket::find($datos->input('ticket_id'));
+
+            $this->nuevoHistorialTicket($ticket->estado_proceso, $datos->input('nuevo_estado'), $datos->input('comentario'), $datos->input('ticket_id'));
+
+            $ticket->estado_proceso = $datos->input('nuevo_estado');
+
+            $ticket->save();
+
+            if (($ticket->tipo == 'entrada' && $datos->input('nuevo_estado') == 'terminado') ||
+                ($ticket->tipo == 'salida' && $datos->input('nuevo_estado') == 'cancelado')) {
+                $productos = TicketProducto::where('ticket_id', '=', $ticket->id)->get();
+                $ilen = count($productos);
+                for ($i = 0; $i < $ilen; $i++) {
+                    $producto = Producto::find($productos[$i]->producto_id);
+                    $producto->existencia = $producto->existencia + $productos[$i]->cantidad;
+                    $producto->save();
+                }
+            }
+
+            DB::commit();
+            $success = true;
+        } catch (\Exception $e) {
+            $success = false;
+            DB::rollback();
+        }
+
+        if ($success) {
+
+        }
 
         // return Redirect('/tickets');
         return redirect()->back();
