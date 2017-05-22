@@ -15,7 +15,8 @@ class ClientesController extends Controller
   public function guardarCliente(Request $datos){
     $cliente= new Cliente();
     $cliente->nombre=$datos->input('nombre');
-    $cliente->edad=$datos->input('edad');
+    $cliente->ApellidoP=$datos->input('ApellidoP');
+    $cliente->ApellidoM=$datos->input('ApellidoM');
     $cliente->sexo=$datos->input('sexo');
     $cliente->empresa=$datos->input('empresa');
     $cliente->estado=$datos->input('estado');
@@ -23,7 +24,7 @@ class ClientesController extends Controller
     $cliente->save();
     return Redirect('/clientes');
   }
-  
+
   public function consultarClientes() {
       $clientes=DB::table('clientes')
           ->paginate(10);
@@ -39,7 +40,8 @@ class ClientesController extends Controller
   public function actualizarCliente(Request $datos){
       $cliente=Cliente::find($datos->input('id'));
       $cliente->nombre=$datos->input('nombre');
-      $cliente->edad=$datos->input('edad');
+      $cliente->ApellidoP=$datos->input('ApellidoP');
+      $cliente->ApellidoM=$datos->input('ApellidoM');
       $cliente->sexo=$datos->input('sexo');
       $cliente->empresa=$datos->input('empresa');
       $cliente->estado=$datos->input('estado');
