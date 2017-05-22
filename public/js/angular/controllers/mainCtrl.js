@@ -5,6 +5,7 @@ app.controller('mainController', ['DataFactory', function(DataFactory) {
 	var vm = this;
 
     vm.abrirModal = function(selector, identificador) {
+        console.log("selector", selector);
         vm.identificador_modal = identificador;
 
         jQuery(selector).modal('show');
@@ -12,6 +13,10 @@ app.controller('mainController', ['DataFactory', function(DataFactory) {
 
     vm.eliminarIndiceLista = function(array, indice) {
         array.splice(indice, 1);
+    };
+
+    vm.fechaTimestamp = function(fechaTimestamp) {
+        return moment(fechaTimestamp, 'YYYY-MM-DD HH:mm:ss').toDate();
     };
 
 	// Funciones para el botón del sidebar

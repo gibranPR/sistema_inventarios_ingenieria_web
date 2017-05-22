@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label for="comentario">Comentario del ticket</label>
-                    <textarea name="comentario" id="comentario" class="form-control" rows="4" placeholder="Comentario" maxlength="500"></textarea>
+                    <textarea name="comentario" id="comentario" class="form-control" rows="4" placeholder="Comentario" maxlength="500" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="producto">Productos</label>

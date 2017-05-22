@@ -25,17 +25,17 @@
                     </div>
                     <div class="form-group">
                         <label for="categoria">Categoria</label>
-                        <input class="form-control" id="categoria" name="categoria" placeholder="Categoria" type="number" value="{{$productos->categoria}}" required>
+                        <input class="form-control" id="categoria" name="categoria" placeholder="Categoria" type="text" value="{{$productos->categoria}}" required>
                     </div>
                     <div class="form-group">
                         <label for="existencia">Existencia</label>
                         <input class="form-control" id="existencia" name="existencia" placeholder="Existencia" type="number" value="{{$productos->existencia}}" required>
                     </div>
                     <div class="form-group">
-                        <label for="activo">Estatus del producto</label>
-                        <select name="activo" class="form-control" required>
-                                <option value="1" @if($productos->activo)selected="true"@endif>Activo</option>
-                                <option value="0" @if(!$productos->activo)selected="true"@endif>Inactivo</option>
+                        <label for="estado">Estado del producto</label>
+                        <select name="estado" class="form-control" required>
+                                <option value="1" @if($productos->estado)selected="true"@endif>Activo</option>
+                                <option value="0" @if(!$productos->estado)selected="true"@endif>Inactivo</option>
                         </select>
                     </div>
                 </div>

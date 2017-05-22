@@ -31,10 +31,12 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/editarProductos/{id}', 'ProductosController@editarProductos');
 	Route::post('/actualizarProductos/{id}', 'ProductosController@actualizarProductos');
 	Route::get('/disableProductos/{id}', 'ProductosController@disableProducto');
+	Route::get('/productos','ProductosController@consultarProductos');
 
 	// Tickets - Iván
 	Route::get('/tickets', 'TicketsController@consultarTickets');
 	Route::get('/tickets/ver/{ticket_id}', 'TicketsController@verTicket');
+	Route::post('/tickets/estado', 'TicketsController@cambiarEstado');
 	Route::get('/ticket-salida', 'TicketsController@nuevoTicketSalida');
 	Route::get('/ticket-entrada', 'TicketsController@nuevoTicketEntrada');
 	Route::post('/tickets', 'TicketsController@crearTicket');
@@ -52,3 +54,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Auth::routes();
+;

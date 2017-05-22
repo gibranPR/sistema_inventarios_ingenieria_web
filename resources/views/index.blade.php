@@ -81,7 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li ng-class="{ active: navbar.isActive('/ticket-salida')}"><a href="{{url('/ticket-salida')}}"><i class="fa fa-sign-out" aria-hidden="true"></i><span>Nueva Salida</span></a></li>
                     <li ng-class="{ active: navbar.isActive('/ticket-entrada')}"><a href="{{url('/ticket-entrada')}}"><i class="fa fa-sign-in" aria-hidden="true"></i><span>Nueva Entrada</span></a></li>
                     <li ng-class="{ active: navbar.isActive('/tickets')}"><a href="{{url('/tickets')}}"><i class="fa fa-ticket" aria-hidden="true"></i><span>Tickets</span></a></li>
-                    <li ng-class="{ active: navbar.isActive('/consultarProductos')}"><a href="{{url('/consultarProductos')}}"><i class="fa fa-building-o" aria-hidden="true"></i><span>Productos</span></a></li>
+                    <li ng-class="{ active: navbar.isActive('/consultarProductos')}"><a href="{{url('/productos')}}"><i class="fa fa-fw fa-th-list" aria-hidden="true"></i><span>Productos</span></a></li>
                     <li ng-class="{ active: navbar.isActive('/clientes')}"><a href="{{url('/clientes')}}"><i class="fa fa-building-o" aria-hidden="true"></i><span>Clientes</span></a></li>
                 </ul>
             </section>
@@ -98,10 +98,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             Ingeniería Web 2017
         </footer>
     </div>
-    <!-- jQuery 2.2.3 -->
+    {{-- jQuery 2.2.3 --}}
     <script src="{{asset('bibliotecas/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
-    <!-- Bootstrap 3.3.6 -->
+    {{-- Bootstrap 3.3.6 --}}
     <script src="{{asset('bibliotecas/AdminLTE/bootstrap/js/bootstrap.min.js')}}"></script>
+    {{-- Moment.js --}}
+    <script src="{{asset('bibliotecas/moment/min/moment.min.js')}}"></script>
     {{-- Angular --}}
     <script src="{{asset('bibliotecas/angular/angular.min.js')}}"></script>
     {{-- JS de Angular --}}

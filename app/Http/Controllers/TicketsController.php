@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Cliente;
 use App\Producto;
 use App\Ticket;
 use App\TicketProducto;
+use App\HistorialTicket;
 use DB;
 
 class TicketsController extends Controller
@@ -20,7 +22,9 @@ class TicketsController extends Controller
     public function verTicket($ticket_id) {
         $ticket = Ticket::with('user', 'cliente', 'producto')->where('id', $ticket_id)->get()[0];
 
-        return view('ver_ticket', compact('ticket'));
+        $historial_ticket = HistorialTicket::where('ticket_id', '=', $ticket_id)->orderBy('created_at', 'desc')->get();
+
+        return view('ver_ticket', compact('ticket', 'historial_ticket'));
     }
 
     public function nuevoTicketEntrada() {
@@ -31,10 +35,22 @@ class TicketsController extends Controller
         return $this->nuevoTicket('salida');
     }
 
+    public function cambiarEstado(Request $datos) {
+        $ticket = Ticket::find($datos->input('ticket_id'));
+
+        $this->nuevoHistorialTicket($ticket->estado_proceso, $datos->input('nuevo_estado'), $datos->input('comentario'), $datos->input('ticket_id'));
+
+        $ticket->estado_proceso = $datos->input('nuevo_estado');
+        $ticket->save();
+
+        // return Redirect('/tickets');
+        return redirect()->back();
+    }
+
     private function nuevoTicket($tipo) {
     	$clientes=Cliente::select('id', 'nombre', 'empresa')->where('estado', '=', '1')->orderBy('nombre')->get();
 
-    	$productos=Producto::select('id', 'nombre', 'existencia')->where([['activo', '=', '1'], ['existencia', '>', '0']])->orderBy('nombre')->get();
+    	$productos=Producto::select('id', 'nombre', 'existencia')->where([['estado', '=', '1'], ['existencia', '>', '0']])->orderBy('nombre')->get();
 
     	return view('crear_ticket', compact('clientes', 'productos', 'tipo'));
     }
@@ -79,6 +95,8 @@ class TicketsController extends Controller
                 $ticket_producto->ticket_id = $ticket->id;
                 $ticket_producto->save();
             }
+
+            $this->nuevoHistorialTicket(null, 'nuevo', 'Ticket de entrada creado.', $ticket->id);
             
             DB::commit();
             $success = true;
@@ -88,8 +106,10 @@ class TicketsController extends Controller
         }
 
         if ($success) {
-            return Redirect('/tickets');
+
         }
+
+        return Redirect('/tickets');
     }
 
     private function crearTicketSalida(Request $datos) {
@@ -118,6 +138,8 @@ class TicketsController extends Controller
                 $ticket_producto->ticket_id = $ticket->id;
                 $ticket_producto->save();
             }
+
+            $this->nuevoHistorialTicket(null, 'nuevo', 'Ticket de salida creado.', $ticket->id);
             
             DB::commit();
             $success = true;
@@ -127,7 +149,19 @@ class TicketsController extends Controller
         }
 
         if ($success) {
-            return Redirect('/tickets');
+
         }
+
+        return Redirect('/tickets');
+    }
+
+    private function nuevoHistorialTicket($estado_anterior, $estado_actual, $comentario, $ticket_id) {
+        $historial_ticket = new HistorialTicket();
+        $historial_ticket->estado_anterior = $estado_anterior;
+        $historial_ticket->estado_actual = $estado_actual;
+        $historial_ticket->comentario = $comentario;
+        $historial_ticket->usuario = Auth::user()->username;
+        $historial_ticket->ticket_id = $ticket_id;
+        $historial_ticket->save();
     }
 }
