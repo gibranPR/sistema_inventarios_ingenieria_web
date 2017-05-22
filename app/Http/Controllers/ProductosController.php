@@ -5,13 +5,12 @@ use App\Producto;
 class ProductosController extends Controller
 {
 	  public function consultarProductos() {
-	   	$productos = Producto::select('id','nombre','costo','categoria','existencia','estado')->paginate(10);
+	   	$productos = Producto::select('id','nombre','categoria','existencia','estado')->paginate(10);
 	   	return view('consultarProductos', compact('productos'));
 	  }
 	  public function registrarProducto(Request $datos){
 	    $productos= new Producto();
 	    $productos->nombre=$datos->input('nombre');
-	    $productos->costo=$datos->input('costo');
 	    $productos->categoria=$datos->input('categoria');
 	    $productos->existencia=$datos->input('existencia');
 	    $productos->estado=$datos->input('estado');
@@ -29,7 +28,6 @@ class ProductosController extends Controller
     	$input = $datos->input();
     	$productos = Producto::find($input['id']);
     	$productos->nombre=$input['nombre'];
-    	$productos->costo=$input['costo'];
     	$productos->categoria=$input['categoria'];
     	$productos->existencia=$input['existencia'];
     	$productos->estado=$input['estado'];

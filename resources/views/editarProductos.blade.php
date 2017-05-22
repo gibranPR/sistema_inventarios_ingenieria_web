@@ -17,13 +17,6 @@
                         <input class="form-control" id="nombre" name="nombre" placeholder="Nombre" type="text" value="{{$productos->nombre}}" required>
                     </div>
                     <div class="form-group">
-                        <label for="costo">Costo</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                            <input class="form-control" id="costo" name="costo" placeholder="Costo" type="number" value="{{$productos->costo}}" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label for="categoria">Categoria</label>
                         <input class="form-control" id="categoria" name="categoria" placeholder="Categoria" type="text" value="{{$productos->categoria}}" required>
                     </div>

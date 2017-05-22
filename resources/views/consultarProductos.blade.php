@@ -27,7 +27,6 @@
 			<tr>
 				<th>ID</th>
 				<th>Nombre</th>
-				<th>Costo</th>
 				<th>Categoria</th>
 				<th>Existencia</th>
 				<th>Estado</th>
@@ -41,7 +40,6 @@
 			<tr @if(!$a->estado)class="danger"@endif>
 				<td>{{$a->id}}</td>
 				<td>{{$a->nombre}}</td>
-				<td>{{$a->costo}}</td>
 				<td>{{$a->categoria}}</td>
 				<td>{{$a->existencia}}</td>
 				<td>@if($a->estado)<span class="text-green"><i class="fa fa-check-circle" aria-hidden="true"></i></span>@else<span class="text-red"><i class="fa fa-ban" aria-hidden="true"></i></span>@endif</td>
