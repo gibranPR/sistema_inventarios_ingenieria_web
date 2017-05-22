@@ -32,7 +32,8 @@ $factory->define(App\Cliente::class, function (Faker\Generator $faker) {
 
     return [
         'nombre' => $faker->name,
-        'edad' => $faker->numberBetween(18, 50),
+        'ApellidoP' => $faker->lastName,
+        'ApellidoM' => $faker->lastName,
         'sexo' => $faker->boolean,
         'empresa' => $faker->company,
         'email' => $faker->unique()->email,
